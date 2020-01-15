@@ -15,6 +15,8 @@ A python package for direct variational minimisation, specifically suited for fi
 
 ## TODO: Change variables (u,v) on examples
 
+## TODO: Deal with LD_ thingie
+
 ## Usage
 
 ```python
@@ -77,17 +79,6 @@ mpl.pyplot.gcf().set_size_inches(7, 7)
 
 For more examples, click [here](https://github.com/lukastk/PyRitz/tree/master/examples).
 
-## Dependencies
-
-- [NumPy](https://numpy.org/)
-- [SciPy](https://www.scipy.org/)
-- [NLopt](https://nlopt.readthedocs.io/en/latest/)
-
-To run the examples you need:
-
-- [Jupyter Notebook](https://jupyter.org/) (Easiest way to  install this is via [Anaconda](https://www.anaconda.com/distribution/))
-- [Matplotlib](https://matplotlib.org/)
-
 ## Installation
 
 ### Running the PyRitz examples
@@ -110,7 +101,30 @@ cd PyRitz
 python setup.py install
 ```
 
-You must also install the [dependencies](#dependencies).
+You must also install the [dependencies](#dependencies). The most straight-forward way to install PyRitz and its dependencies is through [Anaconda](https://www.anaconda.com/distribution/).
+
+```
+conda install numpy
+conda install scipy
+conda install -c conda-forge nlopt
+```
+
+For plotting:
+
+```
+conda install matplotlib
+```
+
+## Dependencies
+
+- [NumPy](https://numpy.org/)
+- [SciPy](https://www.scipy.org/)
+- [NLopt](https://nlopt.readthedocs.io/en/latest/)
+
+To run the examples you need:
+
+- [Jupyter Notebook](https://jupyter.org/) (Easiest way to  install this is via [Anaconda](https://www.anaconda.com/distribution/))
+- [Matplotlib](https://matplotlib.org/)
 
 ## Publications
 
