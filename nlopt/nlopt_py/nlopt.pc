@@ -1,0 +1,10 @@
+prefix=/tmp/pip-install-nnz282w8/nlopt/build/temp.linux-x86_64-3.7
+exec_prefix=${prefix}
+libdir=/tmp/pip-install-nnz282w8/nlopt/build/lib.linux-x86_64-3.7
+includedir=${prefix}/include
+
+Name: NLopt
+Description: nonlinear optimization libary
+Version: 2.4.2
+Libs: -L${libdir} -lnlopt -lm
+Cflags: -I${includedir}
