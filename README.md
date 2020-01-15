@@ -12,8 +12,7 @@ Below is a simple demonstration of PyRitz:
 ```python
 import pyritz, nlopt
 
-# Define the Lagrangian
-
+# Define the lagrangian of the surface of revolution
 def lagrangian(ls, dxls, dvls, path, xs, args):
     ys, dys = path
     ls[:] = 2*np.pi*np.abs(ys)*np.sqrt(1 + dys*dys)
