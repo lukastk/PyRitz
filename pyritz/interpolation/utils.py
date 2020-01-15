@@ -1,7 +1,18 @@
 import pyritz
 import numpy as np
-import scipy.interpolate
+from scipy.interpolate import BarycentricInterpolator
 from scipy.linalg import toeplitz
+
+def resample(alpha, n1, n2, collocation_scheme=None):
+    pass
+
+def finite_difference_gradient(action, alpha, d=1e-10):
+    grad = np.zeros(np.size(alpha))
+    for i in range(grad.size):
+        dalpha = np.zeros(np.size(alpha))
+        dalpha[i] = d
+        grad[i] = ( action.compute(alpha + dalpha) - action.compute(alpha - dalpha) ) / (2*d)
+    return grad
 
 def interpolate(alpha, n, ts, collocation_scheme=None):
     # By default, interpolation over the Chebyshev nodes of the second kind is used
@@ -14,7 +25,7 @@ def interpolate(alpha, n, ts, collocation_scheme=None):
     xs = np.zeros( (dim, len(ts)) )
 
     for i in range(dim):
-        xs[i,:] = scipy.interpolate.BarycentricInterpolator(cts, alpha_reshaped[i, :])(ts)
+        xs[i,:] = BarycentricInterpolator(cts, alpha_reshaped[i, :])(ts)
 
     return xs
 

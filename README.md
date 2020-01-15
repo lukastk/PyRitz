@@ -5,18 +5,6 @@ PyRitz is a library for
 
 A python package for direct variational minimisation, specifically suited for finding Freidlin-Wentzell instantons.
 
-## TODO: Change Path into something else
-
-## TODO: Remove get_action
-
-## TODO: Change dxs to vs
-
-## TODO: Fix catenary
-
-## TODO: Change variables (u,v) on examples
-
-## TODO: Deal with LD_ thingie
-
 ## Usage
 
 ```python
@@ -40,12 +28,12 @@ nq = n*10
 alpha0 = pyritz.interpolation.utils.linear_path(y1, y2, n)
 
 # Setup the path-interpolation and action quadrature of the system using PyRitz
-system = pyritz.interpolation.System(lagrangian, n, nq, x1, x2)
+action = pyritz.interpolation.Action(lagrangian, n, nq, x1, x2)
 
 # Minimize the action using NLopt
 opt = nlopt.opt(nlopt.LN_NEWUOA, np.size(alpha0))
 opt.set_lower_bounds(np.full(np.size(alpha0), 0))
-opt.set_min_objective(path.action)
+opt.set_min_objective(action.compute)
 opt.set_xtol_rel(1e-10)
 alpha = opt.optimize(alpha0)
 
@@ -62,8 +50,8 @@ def analytic_sol(xs):
 xs = np.linspace(-1, 1, 1000)
 
 paths = [
-    (path.get_alpha_with_endpoints(alpha0), "Initial"),
-    (path.get_alpha_with_endpoints(alpha), "Final")
+    (action.get_alpha_with_endpoints(alpha0), "Initial"),
+    (action.get_alpha_with_endpoints(alpha), "Final")
 ]
 
 for _alpha, _label in paths:
