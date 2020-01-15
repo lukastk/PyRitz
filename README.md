@@ -5,7 +5,9 @@ A python package for direct variational minimisation, specifically suited for fi
 
 ## Usage
 
-For a detailed tutorial see [examples/PyRitz Tutorial.ipynb](https://github.com/lukastk/PyRitz/blob/master/examples/PyRitz%20Tutorial.ipynb)
+For a detailed tutorial see the Jupyter Notebook [PyRitz/examples/PyRitz Tutorial](https://github.com/lukastk/PyRitz/blob/master/examples/PyRitz%20Tutorial.ipynb), or the PDF version of the tutorial [PyRitz/docs/PyRitz Tutorial](https://github.com/lukastk/PyRitz/blob/master/docs/PyRitz%20Tutorial.pdf).
+
+Below is a simple demonstration of PyRitz:
 
 ```python
 import pyritz, nlopt
@@ -41,6 +43,13 @@ print("S[alpha0] = %s" % path.action(alpha0))
 print("S[alpha]  = %s" % path.action(alpha))
 ```
 
+Results:
+
+```
+S[alpha0] = 51.01386317532773
+S[alpha]  = 49.135826695371414
+```
+
 Plot the result:
 
 ```python
@@ -65,7 +74,7 @@ mpl.pyplot.gcf().set_size_inches(7, 7)
 
 ![Surface of revolution](./docs/media/surface-of-revolution.png)
 
-For more examples, click [here](https://github.com/lukastk/PyRitz/tree/master/examples).
+For more examples see the folder [PyRitz/examples/](https://github.com/lukastk/PyRitz/tree/master/examples).
 
 ## Installation
 
