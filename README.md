@@ -1,11 +1,11 @@
 PyRitz
 =======
 
-PyRitz is a library for
-
 A python package for direct variational minimisation, specifically suited for finding Freidlin-Wentzell instantons.
 
 ## Usage
+
+For a detailed tutorial see [examples/PyRitz Tutorial.ipynb](https://github.com/lukastk/PyRitz/blob/master/examples/PyRitz%20Tutorial.ipynb)
 
 ```python
 import pyritz, nlopt
