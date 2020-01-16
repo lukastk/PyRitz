@@ -12,5 +12,5 @@ setup(
     description='A python package for direct variational minimisation, specifically suited for finding Freidlin-Wentzell instantons.',
     platforms='Tested on Linux and Mac',
     libraries=[],
-    packages=['pyritz'],
+    packages=['pyritz', 'pyritz.interpolation'],
 )

@@ -4,7 +4,13 @@ from scipy.interpolate import BarycentricInterpolator
 from scipy.linalg import toeplitz
 
 def resample(alpha, n1, n2, collocation_scheme=None):
-    pass
+    # By default, interpolation over the Chebyshev nodes of the second kind is used
+    if collocation_scheme is None:
+        collocation_scheme = pyritz.interpolation.collocation.chebyshev2
+
+    us2, _ = collocation_scheme(n2, [])
+    alpha_resampled = interpolate(alpha, n1, us2, collocation_scheme=collocation_scheme)
+    return alpha_resampled
 
 def finite_difference_gradient(action, alpha, d=1e-10):
     grad = np.zeros(np.size(alpha))
