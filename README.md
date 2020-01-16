@@ -19,7 +19,14 @@ cd PyRitz
 python setup.py install
 ```
 
-You must also install the [dependencies](#dependencies). The most straight-forward way to install PyRitz and its dependencies is through [Anaconda](https://www.anaconda.com/distribution/).
+
+## Dependencies
+
+- [NumPy](https://numpy.org/)
+- [SciPy](https://www.scipy.org/)
+- [NLopt](https://nlopt.readthedocs.io/en/latest/)
+
+The most straight-forward way to install PyRitz and its dependencies is through [Anaconda](https://www.anaconda.com/distribution/).
 
 ```
 conda install numpy
@@ -33,13 +40,7 @@ For plotting:
 conda install matplotlib
 ```
 
-## Dependencies
-
-- [NumPy](https://numpy.org/)
-- [SciPy](https://www.scipy.org/)
-- [NLopt](https://nlopt.readthedocs.io/en/latest/)
-
-To run the examples you need:
+To run the examples you also need:
 
 - [Jupyter Notebook](https://jupyter.org/) (Easiest way to  install this is via [Anaconda](https://www.anaconda.com/distribution/))
 - [Matplotlib](https://matplotlib.org/)
