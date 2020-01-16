@@ -3,6 +3,48 @@ PyRitz
 
 A python package for direct variational minimisation, specifically suited for finding Freidlin-Wentzell instantons.
 
+
+
+### Installation
+#### Pip
+
+```
+pip install -e git+https://github.com/lukastk/PyRitz.git#egg=pyritz
+```
+
+#### Clone/fork repo
+```
+git clone https://github.com/lukastk/PyRitz.git
+cd PyRitz
+python setup.py install
+```
+
+You must also install the [dependencies](#dependencies). The most straight-forward way to install PyRitz and its dependencies is through [Anaconda](https://www.anaconda.com/distribution/).
+
+```
+conda install numpy
+conda install scipy
+conda install -c conda-forge nlopt
+```
+
+For plotting:
+
+```
+conda install matplotlib
+```
+
+## Dependencies
+
+- [NumPy](https://numpy.org/)
+- [SciPy](https://www.scipy.org/)
+- [NLopt](https://nlopt.readthedocs.io/en/latest/)
+
+To run the examples you need:
+
+- [Jupyter Notebook](https://jupyter.org/) (Easiest way to  install this is via [Anaconda](https://www.anaconda.com/distribution/))
+- [Matplotlib](https://matplotlib.org/)
+
+
 ## Usage
 
 For a detailed tutorial see the Jupyter Notebook [PyRitz/examples/PyRitz Tutorial](https://github.com/lukastk/PyRitz/blob/master/examples/PyRitz%20Tutorial.ipynb), or the PDF version of the tutorial [PyRitz/docs/PyRitz Tutorial](https://github.com/lukastk/PyRitz/blob/master/docs/PyRitz%20Tutorial.pdf).
@@ -88,45 +130,6 @@ sh setup_nlopt_locally.sh
 cd examples
 jupyter notebook
 ```
-
-### Installing from the repository 
-#### Pip
-
-```
-pip install -e git+https://github.com/lukastk/PyRitz.git#egg=pyritz
-```
-
-#### Clone/fork repo
-```
-git clone https://github.com/lukastk/PyRitz.git
-cd PyRitz
-python setup.py install
-```
-
-You must also install the [dependencies](#dependencies). The most straight-forward way to install PyRitz and its dependencies is through [Anaconda](https://www.anaconda.com/distribution/).
-
-```
-conda install numpy
-conda install scipy
-conda install -c conda-forge nlopt
-```
-
-For plotting:
-
-```
-conda install matplotlib
-```
-
-## Dependencies
-
-- [NumPy](https://numpy.org/)
-- [SciPy](https://www.scipy.org/)
-- [NLopt](https://nlopt.readthedocs.io/en/latest/)
-
-To run the examples you need:
-
-- [Jupyter Notebook](https://jupyter.org/) (Easiest way to  install this is via [Anaconda](https://www.anaconda.com/distribution/))
-- [Matplotlib](https://matplotlib.org/)
 
 ## Publications
 
