@@ -89,8 +89,14 @@ cd examples
 jupyter notebook
 ```
 
-### Installing from the repository
+### Installing from the repository 
+#### Pip
 
+```
+pip install -e git+https://github.com/lukastk/PyRitz.git#egg=pyritz
+```
+
+#### Clone/fork repo
 ```
 git clone https://github.com/lukastk/PyRitz.git
 cd PyRitz
