@@ -5,7 +5,17 @@ A python package for direct variational minimisation, specifically suited for fi
 
 
 
-### Installation
+## Installation
+### Running the PyRitz examples
+It is possible to try out PyRitz *without* installing it to your system (this was only tested on Linux). The script *setup_nlopt_locally.sh* installs NLopt into the repository, so that the examples can be run locally.
+
+```
+git clone https://github.com/lukastk/PyRitz.git
+cd PyRitz
+sh setup_nlopt_locally.sh
+cd examples
+jupyter notebook
+```
 #### Pip
 
 ```
@@ -117,20 +127,6 @@ mpl.pyplot.gcf().set_size_inches(7, 7)
 ![Surface of revolution](./docs/media/surface-of-revolution.png)
 
 For more examples see the folder [PyRitz/examples/](https://github.com/lukastk/PyRitz/tree/master/examples).
-
-## Installation
-
-### Running the PyRitz examples
-
-It is possible to try out PyRitz *without* installing it to your system (this was only tested on Linux). The script *setup_nlopt_locally.sh* installs NLopt into the repository, so that the examples can be run locally.
-
-```
-git clone https://github.com/lukastk/PyRitz.git
-cd PyRitz
-sh setup_nlopt_locally.sh
-cd examples
-jupyter notebook
-```
 
 ## Publications
 
