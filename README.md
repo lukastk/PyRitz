@@ -1,7 +1,60 @@
-PyRitz
+PyRitz: Transition paths and quasipotentials in Python [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/lukastk/PyRitz/master?filepath=binder)
 =======
 
 A python package for direct variational minimisation, specifically suited for finding Freidlin-Wentzell instantons.
+
+
+
+## Installation
+### Running the PyRitz examples
+It is possible to try out PyRitz *without* installing it to your system (this was only tested on Linux). The script *setup_nlopt_locally.sh* installs NLopt into the repository, so that the examples can be run locally.
+
+```
+git clone https://github.com/lukastk/PyRitz.git
+cd PyRitz
+sh setup_nlopt_locally.sh
+cd examples
+jupyter notebook
+```
+#### Pip
+
+```
+pip install -e git+https://github.com/lukastk/PyRitz.git#egg=pyritz
+```
+
+#### Clone/fork repo
+```
+git clone https://github.com/lukastk/PyRitz.git
+cd PyRitz
+python setup.py install
+```
+
+
+## Dependencies
+
+- [NumPy](https://numpy.org/)
+- [SciPy](https://www.scipy.org/)
+- [NLopt](https://nlopt.readthedocs.io/en/latest/)
+
+The most straight-forward way to install PyRitz and its dependencies is through [Anaconda](https://www.anaconda.com/distribution/).
+
+```
+conda install numpy
+conda install scipy
+conda install -c conda-forge nlopt
+```
+
+For plotting:
+
+```
+conda install matplotlib
+```
+
+To run the examples you also need:
+
+- [Jupyter Notebook](https://jupyter.org/) (Easiest way to  install this is via [Anaconda](https://www.anaconda.com/distribution/))
+- [Matplotlib](https://matplotlib.org/)
+
 
 ## Usage
 
@@ -75,53 +128,6 @@ mpl.pyplot.gcf().set_size_inches(7, 7)
 
 For more examples see the folder [PyRitz/examples/](https://github.com/lukastk/PyRitz/tree/master/examples).
 
-## Installation
-
-### Running the PyRitz examples
-
-It is possible to try out PyRitz *without* installing it to your system (this was only tested on Linux). The script *setup_nlopt_locally.sh* installs NLopt into the repository, so that the examples can be run locally.
-
-```
-git clone https://github.com/lukastk/PyRitz.git
-cd PyRitz
-sh setup_nlopt_locally.sh
-cd examples
-jupyter notebook
-```
-
-### Installing from the repository
-
-```
-git clone https://github.com/lukastk/PyRitz.git
-cd PyRitz
-python setup.py install
-```
-
-You must also install the [dependencies](#dependencies). The most straight-forward way to install PyRitz and its dependencies is through [Anaconda](https://www.anaconda.com/distribution/).
-
-```
-conda install numpy
-conda install scipy
-conda install -c conda-forge nlopt
-```
-
-For plotting:
-
-```
-conda install matplotlib
-```
-
-## Dependencies
-
-- [NumPy](https://numpy.org/)
-- [SciPy](https://www.scipy.org/)
-- [NLopt](https://nlopt.readthedocs.io/en/latest/)
-
-To run the examples you need:
-
-- [Jupyter Notebook](https://jupyter.org/) (Easiest way to  install this is via [Anaconda](https://www.anaconda.com/distribution/))
-- [Matplotlib](https://matplotlib.org/)
-
 ## Publications
 
 *Ritz method for transition paths and quasipotentials of rare diffusive events*. L. T. Kikuchi, R. Singh, M. E. Cates, R. Adhikari (To be published)
@@ -134,7 +140,7 @@ If you use PyRitz for academic work, we would request you to cite our papers.
 
 PyRitz is published under the [MIT License](https://opensource.org/licenses/MIT).
 
-This repository includes code from [NLopt](https://nlopt.readthedocs.io/) which is under the [GNU Lesser General Public License](https://en.wikipedia.org/wiki/GNU_Lesser_General_Public_License), developed by [Steven G. Johnson](https://github.com/stevengj).
+This repository includes code from [NLopt](https://nlopt.readthedocs.io/), developed by [Steven G. Johnson], which is under the [GNU Lesser General Public License](https://en.wikipedia.org/wiki/GNU_Lesser_General_Public_License).
 
 ## Authors
 
