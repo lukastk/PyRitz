@@ -1,7 +1,7 @@
 PyRitz: Transition paths and quasipotentials in Python [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/lukastk/PyRitz/master?filepath=binder)
 =======
 
-![PyRitz logo](./docs/media/pyritz-logo.png)
+<img alt="PyRitz logo" src="./docs/media/pyritz-logo.png" width="60%">
 
 A python package for direct variational minimisation, specifically suited for finding Freidlin-Wentzell instantons.
 
