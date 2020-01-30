@@ -142,7 +142,7 @@ If you use PyRitz for academic work, we would request you to cite our papers.
 
 PyRitz is published under the [MIT License](https://opensource.org/licenses/MIT).
 
-This repository includes code from [NLopt](https://nlopt.readthedocs.io/), developed by [Steven G. Johnson], which is under the [GNU Lesser General Public License](https://en.wikipedia.org/wiki/GNU_Lesser_General_Public_License).
+This repository includes code from [NLopt](https://nlopt.readthedocs.io/), developed by [Steven G. Johnson](https://github.com/stevengj), which is under the [GNU Lesser General Public License](https://en.wikipedia.org/wiki/GNU_Lesser_General_Public_License).
 
 ## Authors
 
