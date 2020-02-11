@@ -20,20 +20,41 @@ def finite_difference_gradient(action, alpha, d=1e-10):
         grad[i] = ( action.compute(alpha + dalpha) - action.compute(alpha - dalpha) ) / (2*d)
     return grad
 
-def interpolate(alpha, n, ts, collocation_scheme=None):
+def interpolate(alpha, n, ts, derivatives=0, collocation_scheme=None):
     # By default, interpolation over the Chebyshev nodes of the second kind is used
     if collocation_scheme is None:
         collocation_scheme = pyritz.interpolation.collocation.chebyshev2
 
-    cts, _ = collocation_scheme(n, [])
+    # If derivatives != 0, return derivatives of the path
+    if isinstance(derivatives, int):
+        derivatives = np.arange(1, derivatives+1)
+
+    if len(derivatives) != 0:
+        cts, _, diff_matrices = collocation_scheme(n, derivatives)
+    else:
+        cts, _ = collocation_scheme(n, derivatives)
+
     dim = int(len(alpha) / (n+1))
     alpha_reshaped = alpha.reshape( (dim, n+1) )
-    xs = np.zeros( (dim, len(ts)) )
 
-    for i in range(dim):
-        xs[i,:] = BarycentricInterpolator(cts, alpha_reshaped[i, :])(ts)
+    if len(derivatives) == 0:
+        path = np.zeros( (dim, len(ts)) )
 
-    return xs
+        for i in range(dim):
+            path[i,:] = BarycentricInterpolator(cts, alpha_reshaped[i, :])(ts)
+    else:
+        path = np.zeros( (len(derivatives)+1, dim, len(ts)) )
+
+        for i in range(len(derivatives)+1):
+            if i==0:
+                D = np.eye(n+1)
+            else:
+                D = diff_matrices[i-1]
+
+            for j in range(dim):
+                path[i,j,:] = BarycentricInterpolator(cts, D.dot(alpha_reshaped[j, :]))(ts)
+
+    return path
 
 def linear_path(x1, x2, n, exclude_x1=True, exclude_x2=True, collocation_scheme=None):
     # By default, interpolation over the Chebyshev nodes of the second kind is used
