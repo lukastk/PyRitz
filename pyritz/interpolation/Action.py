@@ -2,7 +2,7 @@ import pyritz
 import numpy as np
 
 class Action():
-    def __init__(self, lagrangian, n, nq, dim=None, x1=None, x2=None, collocation_scheme=None, quadrature_scheme=None, derivatives=1, lagrangian_args=None):
+    def __init__(self, lagrangian, n, nq, x1=None, x2=None, dim=None, collocation_scheme=None, quadrature_scheme=None, derivatives=1, lagrangian_args=None):
         self.lagrangian = lagrangian
         self.lagrangian_args = lagrangian_args # Stores arguments that should be passed to the larangian
 
@@ -16,14 +16,14 @@ class Action():
 
         self.dim = dim # This is only needed if x1 or x2 are not defined
 
-        self.x1 = x1
+        self.x1 = None
         if not x1 is None:
             if np.size(x1) == 1:
                 x1 = np.array([x1])
             self.x1 = np.copy(x1)
             self.dim = x1.size
 
-        self.x2 = x2
+        self.x2 = None
         if not x2 is None:
             if np.size(x2) == 1:
                 x2 = np.array([x2])
@@ -72,6 +72,12 @@ class Action():
         self.lagrangian(self._lagrangian_arr, None, None, self.path_T, self.quadrature_ts, self.lagrangian_args)
         return self._lagrangian_arr
 
+    def compute_lagrangian_at(self, alpha, us):
+        path = pyritz.interpolation.utils.interpolate(self.get_full_alpha(alpha), self.n, us, derivatives=self.derivatives)
+        _lagrangian_arr = np.zeros(us.size)
+        self.lagrangian(_lagrangian_arr, None, None, path, us, self.lagrangian_args)
+        return _lagrangian_arr
+
     def compute_gradient(self, alpha):
         grad = np.zeros(np.size(alpha))
         self.__interpolate(alpha)
@@ -107,6 +113,8 @@ class Action():
             alpha_full[self.fixed_parameter_index_mask] = alpha
 
             return alpha_full
+        else:
+            return alpha
 
     def fix_parameters(self, fixed_parameter_indices, fixed_parameter_values):
         self.x1 = None
