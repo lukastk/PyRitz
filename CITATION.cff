@@ -1,0 +1,20 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: PyRitz
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Lukas Takaaki
+    name-particle: Lukas
+    family-names: Kikuchi
+    email: lukas.kikuchi@gmail.com
+    affiliation: University of Cambridge
+    orcid: 'https://orcid.org/0000-0002-2436-0671'
+  - given-names: Rajesh
+    family-names: Singh
+    email: rajesh.singh@physics.iitm.ac.in
+    affiliation: Indian Institute Of Technology Madras
